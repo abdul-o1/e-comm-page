@@ -1,0 +1,253 @@
+.hero-section {
+  background-image: url("./public/BGimage.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.text-box {
+  background-color: #fff3e3; /* Updated background color */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 400px;
+}
+
+.text-box h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #b88e2f; /* Brownish color */
+}
+
+.text-box p {
+  color: #000000;
+}
+
+.text-box .btn-custom {
+  background-color: #b88e2f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+
+.text-box .btn-custom:hover {
+  background-color: #db9366;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 1.25rem;
+}
+
+.card-img-top {
+  height: auto;
+  object-fit: cover;
+}
+
+.product-card {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-desc {
+  color: #888;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #333;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #146eb8;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.hover-card {
+  position: relative;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-options {
+  color: white;
+  display: flex;
+}
+
+.hover-options a {
+  color: white;
+  text-decoration: none;
+}
+
+button.btn {
+  background-color: #b88e2f;
+  border: none;
+  color: white;
+}
+.hover-overlay .btn-custom:hover{
+  border-color: #b88e2f;
+  background-color: #db9366;
+}
+
+button.btn-outline-custom:hover {
+  border-color: #b88e2f;
+  background-color: #db9366;
+}
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: #ffffff; /* Background for text */
+  padding: 20px;
+  border-radius: 10px;
+}
+.carousel-caption .btn-custom{
+  background-color:#b88e2f;
+   border: none;
+   color: white;
+}
+.carousel-caption .btn-custom:hover{
+  background-color: #db9366;
+  color: white;
+  border: none;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(100%);
+}
+
+.info-box {
+  background-color:#fff3e3;
+  padding: 40px;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+
+.info-box h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.info-box p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.info-box .btn-custom {
+  background-color:#b88e2f;
+  border: none;
+  color: white;
+}
+.info-box .btn-custom:hover{
+  background-color: #db9366;
+  border: none;
+  color: white;
+}
+
+.custom-carousel-dots {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+}
+
+.custom-carousel-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.custom-carousel-dots button {
+  background-color: #777;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+}
+
+.custom-carousel-dots .active button {
+  background-color: #fff3e3;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .info-box {
+    margin-right: 0;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .info-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .custom-carousel-dots {
+    bottom: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 200px;
+  }
+
+  .info-box h1 {
+    font-size: 1.2rem;
+  }
+}
