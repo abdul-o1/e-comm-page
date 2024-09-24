@@ -25,6 +25,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./index.js" defer></script>
   </head>
 
   <body style="background-color: #f5f5f5">
@@ -143,31 +144,40 @@
                 style="width: 24px; height: 24px"
               />
             </li>
-            <li class="nav-item">
+            <li class="nav-item position-relative">
               <img
+                id="cartIcon"
                 class="mdiaccount-alert-outline-icon ms-3"
                 loading="lazy"
-                alt=""
+                alt="Cart"
                 src="./public/antdesignshoppingcartoutlined.svg"
-                style="width: 24px; height: 24px"
+                style="width: 24px; height: 24px; cursor: pointer"
               />
+              <span id="cartCountBadge" class="cart-count-badge">0</span>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- hero section -->
-    <section class="hero-section">
-      <div class="text-box shadow">
-        <p class="text-muted small">New Arrival</p>
-        <h1>Discover Our New Collection</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis.
-        </p>
-        <a href="#" class="btn btn-custom mt-3">Buy Now</a>
-      </div>
-    </section>
+    <!-- Hero Section -->
+    <div class="container-fluid">
+      <section class="hero-section">
+        <div class="image-container">
+          <!-- Background Image -->
+          <div class="background-image">
+            <div class="text-box shadow">
+              <p class="text-muted small">New Arrival</p>
+              <h1>Discover Our New Collection</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                tellus, luctus nec ullamcorper mattis.
+              </p>
+              <a href="#" class="btn btn-custom mt-3">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <!-- product section -->
     <div class="container py-5">
@@ -569,7 +579,7 @@
               <span class="visually-hidden">Next</span>
             </button>
 
-            <!-- Carousel Indicators (Custom Dots) -->
+            <!-- Carousel Indicators (Custom Dots)
             <ol class="carousel-indicators custom-carousel-dots">
               <li
                 data-bs-target="#roomCarousel"
@@ -584,13 +594,13 @@
               <li data-bs-target="#roomCarousel" data-bs-slide-to="2">
                 <button></button>
               </li>
-            </ol>
+            </ol> -->
           </div>
         </div>
       </div>
     </div>
     <!-- footer -->
-    <footer style="background-color: white;">
+    <footer style="background-color: white">
       <div class="mt-5 pt-5 border-top">
         <div class="container lh-lg">
           <div
@@ -690,7 +700,21 @@
           </div>
         </div>
       </div>
-
     </footer>
+    <!-- Cart Sidebar HTML -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h4>Shopping Cart</h4>
+        <button id="closeCartBtn" class="close-btn">×</button>
+      </div>
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-footer">
+        <p>Total: <span id="cartTotal">Rp 0</span></p>
+      </div>
+    </div>
+
+    <!-- End of body content -->
   </body>
 </html>
