@@ -182,29 +182,27 @@
   text-decoration: none;
 }
 
-button.btn {
+button.btn{
   background-color: #b88e2f;
   border: none;
   color: white;
 }
-#customButton {
-  color: white;
+#customButton{
   background-color: #b88e2f;
-  border: none;
+  color: white;
 }
 #customButton:hover{
   color: black;
-  background-color: #db9366;
-  transition: 0.5s;
+  background-color: #777;
 }
-.hover-overlay .btn-custom:hover {
-  border-color: #b88e2f;
-  background-color: #db9366;
+.hover-overlay .product-btn:hover {
+  color: #b88e2f;
+  border: 0.5px solid #b88e2f;
 }
 
 button.btn-outline-custom:hover {
-  border-color: #b88e2f;
-  background-color: #db9366;
+  color: #b88e2f;
+  border: 0.5px solid #b88e2f;
 }
 .carousel-item img {
   height: 500px;
@@ -222,9 +220,8 @@ button.btn-outline-custom:hover {
   color: white;
 }
 .carousel-caption .btn-custom:hover {
-  background-color: #db9366;
-  color: white;
-  border: none;
+  color: #b88e2f;
+  border: 0.5px solid #b88e2f;
 }
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
@@ -254,9 +251,8 @@ button.btn-outline-custom:hover {
   color: white;
 }
 .info-box .btn-custom:hover {
-  background-color: #db9366;
-  border: none;
-  color: white;
+  color: #b88e2f;
+  border: 0.5px solid #b88e2f;
 }
 
 .custom-carousel-dots {
@@ -367,4 +363,19 @@ button.btn-outline-custom:hover {
   border-top: 1px solid #ddd;
   padding-top: 10px;
   font-weight: bold;
+}
+.btn-buy-now  {
+  background-color: #b88e2f !important;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-buy-now:hover {
+  background-color: white !important;
+  border: 2px solid #b88e2f !important;
+  
 }

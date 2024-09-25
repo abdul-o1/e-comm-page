@@ -45,6 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItemsContainer.appendChild(cartItem);
     });
 
+    if (cart.length > 0) {
+      // Add "Buy Now" button if there are items in the cart
+      const buyNowBtn = document.createElement("button");
+      buyNowBtn.textContent = "Buy Now";
+      buyNowBtn.className = "btn btn-buy-now";
+      buyNowBtn.onclick = handleBuyNow;
+      cartItemsContainer.appendChild(buyNowBtn);
+    }
+
     updateCartTotal();
   }
 
@@ -85,6 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCartItems();
   };
 
+  // Function to handle "Buy Now" button click
+  function handleBuyNow() {
+    alert("Proceeding to checkout with the following items:\n" + cart.map(item => item.name).join(", "));
+    // You can redirect the user to a checkout page or perform another action here
+  }
+
   // Event listeners
   closeCartBtn.addEventListener("click", closeCartSidebar);
 
@@ -109,6 +124,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Open cart sidebar when cart icon is clicked
   cartIcon.addEventListener("click", openCartSidebar);
 });
-
-
-
