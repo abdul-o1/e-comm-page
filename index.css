@@ -125,19 +125,18 @@
   transform: translate(50%, -50%);
   background-color: red;
   color: white;
-  font-size: 12px;               /* Adjusted font size */
-  padding: 0 5px;                /* Padding to ensure numbers fit */
-  border-radius: 50%;            /* Rounded badge */
-  min-width: 20px;               /* Minimum width to accommodate two-digit numbers */
-  height: 20px;                  /* Fixed height to keep shape */
-  display: flex;                 /* Flex to center content */
-  align-items: center;           /* Vertically center text */
-  justify-content: center;       /* Horizontally center text */
-  font-weight: bold;             /* Make text bold */
-  z-index: 10;                   /* Ensure it appears above other elements */
-  line-height: 1;                /* Adjust line height */
+  font-size: 12px; /* Adjusted font size */
+  padding: 0 5px; /* Padding to ensure numbers fit */
+  border-radius: 50%; /* Rounded badge */
+  min-width: 20px; /* Minimum width to accommodate two-digit numbers */
+  height: 20px; /* Fixed height to keep shape */
+  display: flex; /* Flex to center content */
+  align-items: center; /* Vertically center text */
+  justify-content: center; /* Horizontally center text */
+  font-weight: bold; /* Make text bold */
+  z-index: 10; /* Ensure it appears above other elements */
+  line-height: 1; /* Adjust line height */
 }
-
 
 .badge {
   position: absolute;
@@ -187,6 +186,16 @@ button.btn {
   background-color: #b88e2f;
   border: none;
   color: white;
+}
+#customButton {
+  color: white;
+  background-color: #b88e2f;
+  border: none;
+}
+#customButton:hover{
+  color: black;
+  background-color: #db9366;
+  transition: 0.5s;
 }
 .hover-overlay .btn-custom:hover {
   border-color: #b88e2f;
@@ -359,4 +368,3 @@ button.btn-outline-custom:hover {
   padding-top: 10px;
   font-weight: bold;
 }
-
