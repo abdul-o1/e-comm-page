@@ -385,7 +385,7 @@ button.btn-outline-custom:hover {
   top: 0;
   width: 300px;
   height: 100%;
-  background-color: #fff;
+  background-color: #fff3e3;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease-in-out;
   z-index: 1050;
@@ -396,7 +396,7 @@ button.btn-outline-custom:hover {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #f8f9fa;
+  background-color: #fff3e3;
   border-bottom: 1px solid #ddd;
 }
 
@@ -438,7 +438,7 @@ button.btn-outline-custom:hover {
 }
 
 .remove-btn {
-  background-color: #ff4d4d;
+  background-color: #b88e2f;
   border: none;
   padding: 5px 10px;
   color: white;
@@ -447,5 +447,12 @@ button.btn-outline-custom:hover {
 }
 
 .remove-btn:hover {
-  background-color: #ff1a1a;
+  background-color: white;
+  color: black;
+  border: 0.5px solid #b88e2f ;
+}
+.quantity-btn{
+  background-color: #b88e2f;
+  border: none;
+  color:white
 }

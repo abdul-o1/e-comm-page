@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeWishlistBtn = document.getElementById("closeWishlistBtn");
   const wishlistItemsContainer = document.querySelector(".wishlist-items");
   const likeIcons = document.querySelectorAll(".heart-icon");
+  const wishbar= document.getElementById("heartIcon")
   let wishlist = [];
 
   // Function to render wishlist items
@@ -209,5 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Close wishlist sidebar when close button is clicked
   closeWishlistBtn.addEventListener("click", closeWishlistSidebar);
+  wishbar.addEventListener("click",openWishlistSidebar);
 });
 
