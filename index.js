@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to update the cart total and cart count
   function updateCartTotal() {
-    let total = cart.reduce((acc, item) => acc + item.discountedPrice * item.quantity, 0);
+    let total = cart.reduce(
+      (acc, item) => acc + item.discountedPrice * item.quantity,
+      0
+    );
     cartTotal.textContent = `Rp ${total.toLocaleString()}`;
     updateCartCount();
   }
@@ -32,7 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItem.innerHTML = `
         <div>
           <p><strong>${item.name}</strong></p>
-          <p>Original Price: Rp ${item.originalPrice ? item.originalPrice.toLocaleString() : item.discountedPrice.toLocaleString()}</p>
+          <p>Original Price: Rp ${
+            item.originalPrice
+              ? item.originalPrice.toLocaleString()
+              : item.discountedPrice.toLocaleString()
+          }</p>
           <p>Discounted Price: Rp ${item.discountedPrice.toLocaleString()}</p>
           <div>
             <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
@@ -96,7 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to handle "Buy Now" button click
   function handleBuyNow() {
-    alert("Proceeding to checkout with the following items:\n" + cart.map(item => item.name).join(", "));
+    alert(
+      "Proceeding to checkout with the following items:\n" +
+        cart.map((item) => item.name).join(", ")
+    );
     // You can redirect the user to a checkout page or perform another action here
   }
 
@@ -110,11 +120,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = productCard.querySelector(".product-name").textContent;
       const priceElement = productCard.querySelector(".product-price");
       const originalPriceText = priceElement.querySelector(".original-price")
-        ? priceElement.querySelector(".original-price").textContent.replace(/[^\d]/g, "")
+        ? priceElement
+            .querySelector(".original-price")
+            .textContent.replace(/[^\d]/g, "")
         : null;
-      const discountedPriceText = priceElement.childNodes[0].textContent.replace(/[^\d]/g, "");
+      const discountedPriceText =
+        priceElement.childNodes[0].textContent.replace(/[^\d]/g, "");
 
-      const originalPrice = originalPriceText ? parseFloat(originalPriceText) : null;
+      const originalPrice = originalPriceText
+        ? parseFloat(originalPriceText)
+        : null;
       const discountedPrice = parseFloat(discountedPriceText);
 
       addToCart(name, originalPrice, discountedPrice);
@@ -124,3 +139,75 @@ document.addEventListener("DOMContentLoaded", () => {
   // Open cart sidebar when cart icon is clicked
   cartIcon.addEventListener("click", openCartSidebar);
 });
+// whish list bar
+document.addEventListener("DOMContentLoaded", () => {
+  const wishlistSidebar = document.getElementById("wishlistSidebar");
+  const closeWishlistBtn = document.getElementById("closeWishlistBtn");
+  const wishlistItemsContainer = document.querySelector(".wishlist-items");
+  const likeIcons = document.querySelectorAll(".heart-icon");
+  let wishlist = [];
+
+  // Function to render wishlist items
+  function renderWishlistItems() {
+    wishlistItemsContainer.innerHTML = "";
+
+    wishlist.forEach((item, index) => {
+      const wishlistItem = document.createElement("div");
+      wishlistItem.className = "wishlist-item";
+      wishlistItem.innerHTML = `
+        <div class="wishlist-product">
+          <img src="${item.image}" alt="${item.name}" class="wishlist-product-img" />
+          <div class="wishlist-product-info">
+            <p><strong>${item.name}</strong></p>
+            <p>Price: Rp ${item.price.toLocaleString()}</p>
+          </div>
+        </div>
+        <button class="remove-btn" onclick="removeFromWishlist(${index})">Remove</button>
+      `;
+      wishlistItemsContainer.appendChild(wishlistItem);
+    });
+  }
+
+  // Function to open the wishlist sidebar
+  function openWishlistSidebar() {
+    wishlistSidebar.style.right = "0";
+  }
+
+  // Function to close the wishlist sidebar
+  function closeWishlistSidebar() {
+    wishlistSidebar.style.right = "-400px";
+  }
+
+  // Function to add an item to the wishlist
+  function addToWishlist(name, price, image) {
+    const existingItem = wishlist.find((item) => item.name === name);
+    if (!existingItem) {
+      wishlist.push({ name, price, image });
+    }
+    renderWishlistItems();
+    openWishlistSidebar();
+  }
+
+  // Function to remove an item from the wishlist
+  window.removeFromWishlist = (index) => {
+    wishlist.splice(index, 1);
+    renderWishlistItems();
+  };
+
+  // Add click event listeners to the like (heart) icons
+  likeIcons.forEach((icon) => {
+    icon.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent any default link behavior
+      const productCard = this.closest(".product-card");
+      const name = productCard.querySelector(".product-name").textContent;
+      const priceText = productCard.querySelector(".product-price").childNodes[0].textContent.replace(/[^\d]/g, "");
+      const price = parseFloat(priceText);
+      const image = productCard.querySelector(".product-img").src;
+      addToWishlist(name, price, image);
+    });
+  });
+
+  // Close wishlist sidebar when close button is clicked
+  closeWishlistBtn.addEventListener("click", closeWishlistSidebar);
+});
+
