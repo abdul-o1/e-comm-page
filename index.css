@@ -1,6 +1,6 @@
-.nav-link:hover {
-  color: orange; /* Change to your desired hover color */
-} /* Hero Section Styling */
+.sidebar{
+  background-color: #fff3e3 !important;
+}
 .hero-section {
   position: relative;
 }

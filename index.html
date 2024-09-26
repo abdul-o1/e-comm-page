@@ -30,14 +30,18 @@
 
   <body style="background-color: #f5f5f5">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    ">
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      "
+    >
       <div class="container-fluid">
+        <!-- logo -->
         <a
           class="navbar-brand"
           href="#"
@@ -59,109 +63,97 @@
           />
           Furiro
         </a>
+        <!-- toggle button -->
         <button
-          class="navbar-toggler"
+          class="navbar-toggler shadow-none border-0"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto" style="padding-left: 10%; gap: 45px">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-                style="
-                  font-weight: 150;
-                  font-size: 15 px;
-                  font-family: 'Montserrat';
-                "
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                style="
-                  font-weight: 150;
-                  font-size: 15 px;
-                  font-family: 'Montserrat';
-                "
-                >Shop</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                style="
-                  font-weight: 150;
-                  font-size: 15 px;
-                  font-family: 'Montserrat';
-                "
-                >About</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                style="
-                  font-weight: 150;
-                  font-size: 15 px;
-                  font-family: 'Montserrat';
-                "
-                >Contact</a
-              >
-            </li>
-          </ul>
-          <ul class="navbar-nav mx-auto" style="margin: 0; gap: 25px">
-            <li class="nav-item">
-              <img
-                class="mdiaccount-alert-outline-icon ms-3"
-                loading="lazy"
-                alt=""
-                src="./public/mdiaccountalertoutline.svg"
-                style="width: 24px; height: 24px"
-              />
-            </li>
-            <li class="nav-item">
-              <img
-                class="mdiaccount-alert-outline-icon ms-3"
-                loading="lazy"
-                alt=""
-                src="./public/akariconssearch.svg"
-                style="width: 24px; height: 24px"
-              />
-            </li>
-            <li class="nav-item">
-              <img
-                class="mdiaccount-alert-outline-icon ms-3"
-                loading="lazy"
-                alt=""
-                src="./public/akariconsheart.svg"
-                style="width: 24px; height: 24px"
-              />
-            </li>
-            <li class="nav-item position-relative">
-              <img
-                id="cartIcon"
-                class="mdiaccount-alert-outline-icon ms-3"
-                loading="lazy"
-                alt="Cart"
-                src="./public/antdesignshoppingcartoutlined.svg"
-                style="width: 24px; height: 24px; cursor: pointer"
-              />
-              <span id="cartCountBadge" class="cart-count-badge">0</span>
-            </li>
-          </ul>
+        <!-- sidebar -->
+        <div
+          class="offcanvas offcanvas-start sidebar"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <!-- offcanvas header -->
+          <div class="offcanvas-header text-black border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Furniro</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-black shadow-none"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- offcanvas body -->
+          <div class="offcanvas-body">
+            <ul
+              class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3"
+            >
+              <li class="nav-item mx-2">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="#">Shop</a>
+              </li>
+
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="#">About</a>
+              </li>
+
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+            <div class="d-flex justify-content-center align-items-center">
+              <ul class="navbar-nav mx-auto d-flex flex-row gap-3">
+                <li class="nav-item">
+                  <img
+                    class="mdiaccount-alert-outline-icon ms-3"
+                    loading="lazy"
+                    alt=""
+                    src="./public/mdiaccountalertoutline.svg"
+                    style="width: 24px; height: 24px"
+                  />
+                </li>
+                <li class="nav-item">
+                  <img
+                    class="mdiaccount-alert-outline-icon ms-3"
+                    loading="lazy"
+                    alt=""
+                    src="./public/akariconssearch.svg"
+                    style="width: 24px; height: 24px"
+                  />
+                </li>
+                <li class="nav-item">
+                  <img
+                    class="mdiaccount-alert-outline-icon ms-3"
+                    loading="lazy"
+                    alt=""
+                    src="./public/akariconsheart.svg"
+                    style="width: 24px; height: 24px"
+                  />
+                </li>
+                <li class="nav-item position-relative">
+                  <img
+                    id="cartIcon"
+                    class="mdiaccount-alert-outline-icon ms-3"
+                    loading="lazy"
+                    alt="Cart"
+                    src="./public/antdesignshoppingcartoutlined.svg"
+                    style="width: 24px; height: 24px; cursor: pointer"
+                  />
+                  <span id="cartCountBadge" class="cart-count-badge">0</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -178,7 +170,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
                 tellus, luctus nec ullamcorper mattis.
               </p>
-              <a href="#" id=customButton class="btn btn-custom mt-3 ">Buy Now</a>
+              <a href="#" id="customButton" class="btn btn-custom mt-3"
+                >Buy Now</a
+              >
             </div>
           </div>
         </div>
@@ -200,7 +194,9 @@
               alt="Syltherine"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -245,7 +241,9 @@
               alt="Leviosa"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -281,7 +279,9 @@
               alt="Lolito"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -320,7 +320,9 @@
               alt="Respira"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -356,7 +358,9 @@
               alt="Grifo"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -392,7 +396,9 @@
               alt="Muggo"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -428,7 +434,9 @@
               alt="Pingky"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
@@ -467,7 +475,9 @@
               alt="Potty"
             />
             <div class="hover-overlay">
-              <button class=" btn btn-custom mb-3 product-btn">Add to cart</button>
+              <button class="btn btn-custom mb-3 product-btn">
+                Add to cart
+              </button>
               <div class="hover-options">
                 <a href="#" class="me-3"
                   ><img
